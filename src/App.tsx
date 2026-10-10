@@ -93,6 +93,14 @@ function AppShell() {
             ))}
           </Routes>
         </main>
+        <nav className="mobile-nav" aria-label={t('Primary navigation')}>
+          {navItems.map(({ to, label, icon: Icon }) => (
+            <NavLink key={to} to={to} className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
+              <Icon size={18} aria-hidden="true" />
+              <span>{t(label)}</span>
+            </NavLink>
+          ))}
+        </nav>
       </div>
     </div>
   )
